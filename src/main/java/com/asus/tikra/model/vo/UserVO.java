@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * 脱敏后的登录用户信息
@@ -47,5 +48,5 @@ public class UserVO implements Serializable {
     /**
      * 创建时间
      */
-    private String createTime;
+    private LocalDateTime createTime;
 }

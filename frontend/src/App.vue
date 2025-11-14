@@ -1,15 +1,11 @@
-<script setup lang="ts">
-import { RouterView } from 'vue-router'
-import BasicLayout from './layout/BasicLayout.vue'
-import { healthCheck } from '@/api/healthController.ts'
-
-healthCheck().then((res) => {
-  console.log(res)
-})
-</script>
-
 <template>
-  <BasicLayout>
-    <RouterView />
-  </BasicLayout>
+  <BasicLayout />
 </template>
+
+<script setup lang="ts">
+import BasicLayout from './layout/BasicLayout.vue'
+import { useLoginUserStore } from './stores/loginUser'
+
+const loginUserStore = useLoginUserStore()
+loginUserStore.fetchLoginUser()
+</script>
