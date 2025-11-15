@@ -6,3 +6,5 @@ dist
 
 target/
 test
+application-local.yml
+tmp
