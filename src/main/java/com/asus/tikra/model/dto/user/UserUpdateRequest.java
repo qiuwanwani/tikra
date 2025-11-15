@@ -1,18 +1,15 @@
-package com.asus.tikra.model.dto;
+package com.asus.tikra.model.dto.user;
 
-import com.asus.tikra.common.PageRequest;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.io.Serial;
 import java.io.Serializable;
 
 /**
- * 用户查询请求
+ * 用户更新请求
  */
-@EqualsAndHashCode(callSuper = false)
 @Data
-public class UserQueryRequest extends PageRequest implements Serializable {
+public class UserUpdateRequest implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
@@ -28,9 +25,9 @@ public class UserQueryRequest extends PageRequest implements Serializable {
     private String userName;
 
     /**
-     * 用户账号
+     * 用户头像
      */
-    private String userAccount;
+    private String userAvatar;
 
     /**
      * 用户简介

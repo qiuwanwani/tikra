@@ -1,4 +1,4 @@
-package com.asus.tikra.model.dto;
+package com.asus.tikra.model.dto.user;
 
 import lombok.Data;
 

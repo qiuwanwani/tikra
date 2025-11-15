@@ -1,18 +1,26 @@
-package com.asus.tikra.model.dto;
+package com.asus.tikra.model.dto.user;
 
+import com.asus.tikra.common.PageRequest;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.io.Serial;
 import java.io.Serializable;
 
 /**
- * 用户创建请求
+ * 用户查询请求
  */
+@EqualsAndHashCode(callSuper = false)
 @Data
-public class UserAddRequest implements Serializable {
+public class UserQueryRequest extends PageRequest implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
+
+    /**
+     * id
+     */
+    private Long id;
 
     /**
      * 用户昵称
@@ -23,11 +31,6 @@ public class UserAddRequest implements Serializable {
      * 用户账号
      */
     private String userAccount;
-
-    /**
-     * 用户头像
-     */
-    private String userAvatar;
 
     /**
      * 用户简介

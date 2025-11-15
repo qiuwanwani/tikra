@@ -1,4 +1,4 @@
-package com.asus.tikra.model.dto;
+package com.asus.tikra.model.dto.user;
 
 import lombok.Data;
 
@@ -6,23 +6,23 @@ import java.io.Serial;
 import java.io.Serializable;
 
 /**
- * 用户更新请求
+ * 用户创建请求
  */
 @Data
-public class UserUpdateRequest implements Serializable {
+public class UserAddRequest implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
     /**
-     * id
-     */
-    private Long id;
-
-    /**
      * 用户昵称
      */
     private String userName;
+
+    /**
+     * 用户账号
+     */
+    private String userAccount;
 
     /**
      * 用户头像

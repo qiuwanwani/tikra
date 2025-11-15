@@ -1,6 +1,6 @@
 package com.asus.tikra.service;
 
-import com.asus.tikra.model.dto.UserQueryRequest;
+import com.asus.tikra.model.dto.user.UserQueryRequest;
 import com.asus.tikra.model.vo.LoginUserVO;
 import com.asus.tikra.model.vo.UserVO;
 import com.mybatisflex.core.query.QueryWrapper;

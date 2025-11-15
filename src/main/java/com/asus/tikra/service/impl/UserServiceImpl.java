@@ -4,7 +4,7 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import com.asus.tikra.exception.BusinessException;
 import com.asus.tikra.exception.ErrorCode;
-import com.asus.tikra.model.dto.UserQueryRequest;
+import com.asus.tikra.model.dto.user.UserQueryRequest;
 import com.asus.tikra.model.enums.UserRoleEnum;
 import com.asus.tikra.model.vo.LoginUserVO;
 import com.asus.tikra.model.vo.UserVO;

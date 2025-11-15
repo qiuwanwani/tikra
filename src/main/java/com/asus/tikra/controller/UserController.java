@@ -8,7 +8,7 @@ import com.asus.tikra.constant.UserConstant;
 import com.asus.tikra.exception.BusinessException;
 import com.asus.tikra.exception.ErrorCode;
 import com.asus.tikra.exception.ThrowUtils;
-import com.asus.tikra.model.dto.*;
+import com.asus.tikra.model.dto.user.*;
 import com.asus.tikra.model.entity.User;
 import com.asus.tikra.model.vo.LoginUserVO;
 import com.asus.tikra.model.vo.UserVO;
