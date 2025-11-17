@@ -5,7 +5,7 @@
       <a-col flex="200px">
         <RouterLink to="/">
           <div class="header-left">
-            <img class="logo" src="@/assets/logo.webp" alt="Logo" />
+            <img class="logo" src="@/assets/logo.png" alt="Logo" />
             <h1 class="site-title">应用生成</h1>
           </div>
         </RouterLink>
@@ -38,7 +38,6 @@
               </template>
             </a-dropdown>
           </div>
-
           <div v-else>
             <a-button type="primary" href="/user/login">登录</a-button>
           </div>
@@ -49,22 +48,19 @@
 </template>
 
 <script setup lang="ts">
-import {computed, h, ref} from 'vue'
+import { computed, h, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import type { MenuProps } from 'ant-design-vue'
-import { message } from 'ant-design-vue'
-import { useLoginUserStore } from '@/stores/loginUser'
-import { HomeOutlined,LogoutOutlined } from '@ant-design/icons-vue'
+import { type MenuProps, message } from 'ant-design-vue'
+import { useLoginUserStore } from '@/stores/loginUser.ts'
 import { userLogout } from '@/api/userController.ts'
+import { LogoutOutlined, HomeOutlined } from '@ant-design/icons-vue'
 
-// 获取登录用户状态
 const loginUserStore = useLoginUserStore()
-
 const router = useRouter()
 // 当前选中菜单
 const selectedKeys = ref<string[]>(['/'])
 // 监听路由变化，更新当前选中菜单
-router.afterEach((to) => {
+router.afterEach((to, from, next) => {
   selectedKeys.value = [to.path]
 })
 
@@ -77,10 +73,20 @@ const originItems = [
     title: '主页',
   },
   {
+    key: '/donation',
+    label: '打赏',
+    title: '打赏',
+  },
+  {
     key: '/admin/userManage',
     label: '用户管理',
     title: '用户管理',
   },
+  {
+    key: '/admin/appManage',
+    label: '应用管理',
+    title: '应用管理',
+  }
 ]
 
 // 过滤菜单项
@@ -110,7 +116,7 @@ const handleMenuClick: MenuProps['onClick'] = (e) => {
   }
 }
 
-// 用户注销
+// 退出登录
 const doLogout = async () => {
   const res = await userLogout()
   if (res.data.code === 0) {

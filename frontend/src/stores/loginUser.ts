@@ -1,9 +1,9 @@
-import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import { getLoginUser } from '@/api/userController'
+import { ref } from 'vue'
+import { getLoginUser } from '@/api/userController.ts'
 
 /**
- * 登录用户信息 store
+ * 登录用户信息
  */
 export const useLoginUserStore = defineStore('loginUser', () => {
   // 默认值
@@ -11,7 +11,7 @@ export const useLoginUserStore = defineStore('loginUser', () => {
     userName: '未登录',
   })
 
-  // 获取登录用户信息、
+  // 获取登录用户信息
   async function fetchLoginUser() {
     const res = await getLoginUser()
     if (res.data.code === 0 && res.data.data) {
@@ -20,7 +20,7 @@ export const useLoginUserStore = defineStore('loginUser', () => {
   }
 
   // 更新登录用户信息
-  function setLoginUser(newLoginUser: API.LoginUserVO) {
+  function setLoginUser(newLoginUser: any) {
     loginUser.value = newLoginUser
   }
 

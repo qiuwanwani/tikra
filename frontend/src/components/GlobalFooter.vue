@@ -2,7 +2,7 @@
   <a-layout-footer class="footer">
     <div class="footer-content">
       <p class="copyright">
-        2025 © Tikra.
+        2025 AI 零代码应用生成平台
       </p>
     </div>
   </a-layout-footer>
@@ -14,13 +14,12 @@
 
 <style scoped>
 .footer {
-  background: #efefef;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
   text-align: center;
   padding: 20px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  margin-top: 12px;
+  border-top: 1px solid rgba(102, 126, 234, 0.1);
 }
 
 .copyright {
